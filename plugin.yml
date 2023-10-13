@@ -1,0 +1,20 @@
+name: XPCurrency
+version: 1.0.0
+author: Terpz710
+api: 5.0.0
+main: Terpz710\XPCurrency\Main
+description: A Pocketmine-MP plugin that adds a new currency type using XP.
+
+permissions:
+  xpcurrency.payxp:
+    description: Allows the user to pay others.
+    defualt: true
+  xpcurrency.setxp:
+    description: Allows the user to set other users balance.
+    defualt: op
+  xpcurrency.xpbottle:
+    description: Allows the user to spawn in banknote like item(XP Bottles).
+    defualt: true
+  xpcurrency.xp
+    description: Allows the user to see their balance.
+    defualt: true
