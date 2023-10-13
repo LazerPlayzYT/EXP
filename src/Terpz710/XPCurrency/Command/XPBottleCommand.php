@@ -1,6 +1,6 @@
 <?php
 
-namespace Terpz710\XPCurrency;
+namespace Terpz710\XPCurrency\Command;
 
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
