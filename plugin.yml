@@ -15,6 +15,6 @@ permissions:
   xpcurrency.xpbottle:
     description: Allows the user to spawn in banknote like item(XP Bottles).
     defualt: true
-  xpcurrency.xp
+  xpcurrency.xp:
     description: Allows the user to see their balance.
     defualt: true
