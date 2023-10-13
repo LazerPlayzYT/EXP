@@ -9,13 +9,11 @@ use Terpz710\XPCurrency\Main;
 
 class SetXP extends Command {
 
-    private $plugin;
     private $xpManager;
 
-    public function __construct(Main $plugin, XPManager $xpManager) {
+    public function __construct(XPManager $xpManager) {
         parent::__construct("setxp", "Set your XP to a specific amount");
         $this->setPermission("xpcurrency.setxp");
-        $this->plugin = $plugin;
         $this->xpManager = $xpManager;
     }
 
