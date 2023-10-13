@@ -4,6 +4,7 @@ namespace Terpz710\XPCurrency\Command;
 
 use pocketmine\player\Player;
 use pocketmine\Server;
+use Terpz710\XPCurrency\Main;
 
 class XPManager {
 
