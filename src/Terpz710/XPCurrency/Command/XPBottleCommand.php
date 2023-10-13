@@ -60,7 +60,7 @@ class XPBottleCommand extends Command implements Listener {
 
         if ($event->getAction() === PlayerInteractEvent::RIGHT_CLICK_BLOCK)
             if ($item->getId() === VanillaItems::EXPERIENCE_BOTTLE) {
-                $xp = $item->getXp();
+                $xp = $item->getXpManager()->getXp();
             
                 $currentXP = $player->getXpManager()->getXpLevel()();
                 if ($currentXP >= $xp) {
