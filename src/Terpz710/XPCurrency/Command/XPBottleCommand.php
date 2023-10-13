@@ -31,9 +31,9 @@ class XPBottleCommand extends Command implements Listener {
                         $currentXP = $sender->getXpManager()->getXpLevel();
                         if ($currentXP >= $amount) {
                             
-                            $bottle = VanillaItems::experienceBottle()->setXp($amount);
+                            $bottle = VanillaItems::EXPERIENCE_BOTTLE()->setXp($amount);
 
-                            $sender->getInventory()->addItem($bottle);
+                            $sender->getInventory()->addTypeItem($bottle);
                             $sender->getXpManager()->subtractXpLevels($amount);
                             $sender->sendMessage("You created an XP bottle with $amount XP.");
                         } else {
