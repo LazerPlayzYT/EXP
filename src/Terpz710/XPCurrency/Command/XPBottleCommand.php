@@ -74,4 +74,3 @@ class XPBottleCommand extends Command implements Listener {
             }
         }
     }
-}
