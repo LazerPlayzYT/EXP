@@ -8,23 +8,21 @@ use Terpz710\XPCurrency\Main;
 
 class XPManager {
 
-    private $plugin;
-
     public function __construct(Main $plugin) {
         $this->plugin = $plugin;
     }
 
     public function setPlayerXP(Player $player, int $xpAmount) {
-        $player->setXpLevel($xpAmount);
+        $player->getXpManager()->setXpLevel($xpAmount);
     }
 
     public function getPlayerXP(Player $player) {
-        return $player->getXpLevel();
+        return $player->getXpManager()->getXpLevel();
     }
 
     public function addPlayerXP(Player $player, int $xpToAdd) {
-        $currentXP = $this->getPlayerXP($player);
-        $this->setPlayerXP($player, $currentXP + $xpToAdd);
+        $currentXP = $this->getXpManager()->getPlayerXP($player);
+        $this->getXpManager()->setPlayerXP($player, $currentXP + $xpToAdd);
     }
 
     public function removePlayerXP(Player $player, int $xpToRemove) {
