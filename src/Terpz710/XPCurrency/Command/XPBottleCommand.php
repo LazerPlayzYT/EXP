@@ -8,6 +8,7 @@ use pocketmine\event\player\PlayerInteractEvent;
 use pocketmine\event\Listener;
 use pocketmine\player\Player;
 use pocketmine\item\VanillaItems;
+use Terpz710\XPCurrency\Main;
 
 class XPBottleCommand extends Command implements Listener {
 
