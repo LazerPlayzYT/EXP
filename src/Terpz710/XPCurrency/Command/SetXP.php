@@ -5,6 +5,7 @@ namespace Terpz710\XPCurrency\Command;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\player\Player;
+use Terpz710\XPCurrency\Main;
 
 class SetXP extends Command {
 
