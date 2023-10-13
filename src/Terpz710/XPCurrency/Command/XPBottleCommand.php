@@ -28,13 +28,13 @@ class XPBottleCommand extends Command implements Listener {
                     $amount = (int)$args[0];
                     if ($amount > 0) {
                         
-                        $currentXP = $sender->getXpLevel();
+                        $currentXP = $sender->getXpManager()->getXpLevel();
                         if ($currentXP >= $amount) {
                             
                             $bottle = VanillaItems::experienceBottle()->setXp($amount);
 
                             $sender->getInventory()->addItem($bottle);
-                            $sender->subtractXpLevels($amount);
+                            $sender->getXpManager()->subtractXpLevels($amount);
                             $sender->sendMessage("You created an XP bottle with $amount XP.");
                         } else {
                             $sender->sendMessage("You don't have enough XP to create the bottle.");
@@ -58,11 +58,11 @@ class XPBottleCommand extends Command implements Listener {
         $player = $event->getPlayer();
         $item = $event->getItem();
 
-        if ($event->getAction() === PlayerInteractEvent::RIGHT_CLICK_BLOCK && $item instanceof VanillaItems) {
+        if ($event->getAction() === PlayerInteractEvent::RIGHT_CLICK_BLOCK)
             if ($item->getId() === VanillaItems::EXPERIENCE_BOTTLE) {
                 $xp = $item->getXp();
             
-                $currentXP = $player->getXpLevel();
+                $currentXP = $player->getXpManager()->getXpLevel()();
                 if ($currentXP >= $xp) {
                     $xpManager = $this->plugin->getXPManager();
                     $xpManager->earnExperienceCurrency($player, $xp);
